@@ -1,0 +1,28 @@
+# Ignore Gradle and Maven files
+.gradle/
+build/
+
+# Ignore local configuration files
+*.iml
+*.ipr
+*.iws
+
+# Ignore IDE config directories
+.idea/
+.classpath
+.project
+.settings/
+.vscode/
+
+# Ignore Git history
+.git/
+
+# Ignore application logs and .dump files
+*.log
+*.dump
+
+# Ignore macOS specific files
+.DS_Store
+
+# Ignore Windows specific files
+Thumbs.db
