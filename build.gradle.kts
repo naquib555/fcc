@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
 	kotlin("jvm") version "1.9.25"
 	kotlin("plugin.spring") version "1.9.25"
@@ -9,10 +11,13 @@ group = "com.fetch"
 version = "1.0.0"
 
 java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(21)
 	}
 }
+
 
 repositories {
 	mavenCentral()
@@ -37,6 +42,12 @@ kotlin {
 
 tasks.jar {
 	enabled = false
+}
+
+tasks.withType<KotlinCompile> {
+	kotlinOptions {
+		jvmTarget = "21"
+	}
 }
 
 tasks.withType<Test> {
